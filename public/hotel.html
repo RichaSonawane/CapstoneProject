@@ -14,7 +14,6 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
     <link rel="stylesheet" type="text/css" href="hotel.css" />
-    <script type="module" src="hotel.js"></script>
   </head>
   <body>
    <div class="row w-100">
@@ -83,14 +82,16 @@
         </table>
       </div>
     </div>
-<form>
+    
  </div>
   </div>
+
   <div class="col-lg-6 my-4 d-flex align-items-center">
+<form>
     <div>
       <h2>Build Your Own Customized Trip Plan</h2>
       <h4>Make organizing your trip plans a breeze</h4>
- <form class="row gy-2 gx-3 align-items-center">
+      
              <div class="col-auto">
     <label class="visually-hidden" for="inlineFormSelectPref">Days</label>
     <select class="select" id="day">
@@ -110,7 +111,8 @@
     <div class="form-outline">
       <label class="form-label" for="form11Example1">About the day</label>
       <input type="text" id="header" class="form-control" />
-
+    </div>
+  </div>
     <div class="col-auto">
   <div class="form-outline">
      <label class="form-label" for="textAreaExample">Activity</label>
@@ -118,27 +120,23 @@
  
 </div>
 </div>
-  <div class="col-auto">
-    <button type="submit" id="submit" class="btn btn-primary">Add</button>
-  </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+   
    <section id="list-container"></section>
- 
-    </div>
+ </div>
   </div>
-  
-</form>
-
     </div>
   </div>
 </div>
+
     <!-- 
      The `defer` attribute causes the callback to execute after the full HTML
      document has been parsed. For non-blocking uses, avoiding race conditions,
      and consistent behavior across browsers, consider loading using Promises
      with https://www.npmjs.com/package/@googlemaps/js-api-loader.
     -->
-     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+     <script src="../node_modules/axios/dist/axios.min.js"></script>
     <script
       src="https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=initMap&libraries=places&v=weekly"
       defer

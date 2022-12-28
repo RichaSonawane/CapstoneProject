@@ -10,7 +10,12 @@ app.use(express.static("public"));
 
 const { userLogin, userSignup } = require("./controllers/authController");
 const { seed } = require("./controllers/db/seed.db.controller");
-const { getList, createList } = require("./controllers/listController");
+const {
+  getList,
+  createList,
+  deleteList,
+  updateList
+} = require("./controllers/listController");
 
 // //entry-point for app
 // app.get('/',(req,res)=> {
@@ -19,6 +24,8 @@ const { getList, createList } = require("./controllers/listController");
 
 app.get(`/api/list`, getList);
 app.post(`/api/list`, createList);
+app.delete(`/api/list/:id`,deleteList)
+app.put(`/api/list/:id`, updateList);
 
 //auth endpoints
 app.post("/api/login", userLogin);
